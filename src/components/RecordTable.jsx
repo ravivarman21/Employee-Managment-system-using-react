@@ -45,7 +45,7 @@ function RecordTable() {
       <div className="flex flex-col gap-2">
         <span>Are you sure want to delete {record.name}</span>
         <div className="flex justify-end gap-2">
-          <button onClick={()=> toast.dismiss}
+          <button onClick={()=> toast.dismiss(t.id)}
             className="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400 text-sm"
             >Cancel</button>
           <button

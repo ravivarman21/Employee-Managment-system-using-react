@@ -1,4 +1,4 @@
-import { current } from '@reduxjs/toolkit';
+
 import { X } from 'lucide-react'
 import React, { useState , useEffect} from 'react'
 import { useDispatch } from 'react-redux'
@@ -39,7 +39,7 @@ function RecordModel({isOpen , onClose , currentRecord}) {
         }
 
         if(currentRecord){
-            dispatch(updateRecord({id : currentRecord , data : formData}));
+            dispatch(updateRecord({id : currentRecord.id , data : formData}));
         }else{
             dispatch(addRecord(formData))
             toast.success("Record added successfully");
@@ -60,7 +60,7 @@ function RecordModel({isOpen , onClose , currentRecord}) {
                 <h2 className="text-2xl font-bold text-gray-800">
                     Register New Record
                 </h2>
-                <button className="text-gray-400 hover:text-gray-600 transition-all">
+                <button  onClick={onClose}  className="text-gray-400 hover:text-gray-600 transition-all">
                     <X size={24} />
                 </button>
             </div>
